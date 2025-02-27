@@ -1,0 +1,6 @@
+# Editor
+/.idea
+
+# Mac
+*._
+.DS_Store
