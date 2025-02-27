@@ -11,9 +11,9 @@ include __DIR__ . '/../templates/header.php';
         <p class="description">Inicia sesión con tu cuenta de RIEAV</p>
         <form class="form" method="POST">
             <label for="email">Email</label>
-            <input class="input" id="email" type="email" name="email" placeholder="Email" required>
+            <input class="input" id="email" type="email" name="email" placeholder="Ingresa tu correo estelar" required>
             <label for="password">Password</label>
-            <input class="input" id="password" type="password" name="password" placeholder="Password" required>
+            <input class="input" id="password" type="password" name="password" placeholder="Tu llave cósmica" required>
             <button class="main_button" type="submit">Iniciar Sesión</button>
         </form>
         <p class="small_text">¿No tienes cuenta? <a href="#">Registrate</a></p>
