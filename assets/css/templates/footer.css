@@ -19,7 +19,7 @@
     justify-content: flex-end;
 }
 
-.title {
+.footer_title {
     color: var(--primary-text-color);
     margin-bottom: var(--normal-spacing);
 }
