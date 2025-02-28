@@ -1,4 +1,4 @@
 RewriteEngine On
 
 # Redirect routes like /login and /register to index.php
-RewriteRule ^(login|register)$ index.php?route=$1 [QSA,L]
+RewriteRule ^(login|register|analysis)$ index.php?route=$1 [QSA,L]

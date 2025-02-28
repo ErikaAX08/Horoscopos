@@ -34,8 +34,11 @@ $currentRoute = basename($_SERVER['REQUEST_URI']);
             <li><a class="menu_link" href="/">Horóscopos</a></li>
             <li><a class="menu_link" href="#">Sobre nosotros</a></li>
             <li><a class="menu_link" href="#">Contáctanos</a></li>
-            <?php if ($currentRoute !== "login" && $currentRoute !== "register"):  ?>
+            <?php if ($currentRoute !== "login" && $currentRoute !== "register" && $currentRoute !== "analysis"):  ?>
                 <li><a class="menu_link menu_button" href="<?php echo $baseURL; ?>/login">Iniciar sesión</a></li>
+            <?php endif; ?>
+            <?php if ($currentRoute === "analysis"):  ?>
+                <li><a class="menu_link menu_button" href="<?php echo $baseURL; ?>/#">Perfil</a></li>
             <?php endif; ?>
         </ul>
     </nav>
