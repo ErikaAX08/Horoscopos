@@ -1,6 +1,6 @@
 <?php
 
-$baseURL = "http://localhost/HoroscoposV2";
+$baseURL = "http://localhost/Horoscopos";
 
 // get current route
 $currentRoute = basename($_SERVER['REQUEST_URI']);
