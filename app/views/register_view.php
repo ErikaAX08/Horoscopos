@@ -63,7 +63,7 @@ include __DIR__ . '/../templates/header.php';
                 </div>
             </div>
 
-            <button class="main_button" type="submit">Crear Cuenta</button>
+            <input name="btn_registro" class="main_button" type="submit">Crear Cuenta</input>
         </form>
         <p class="small_text">¿Ya tienes cuenta? <a href="#">Inicia sesión</a></p>
     </div>
