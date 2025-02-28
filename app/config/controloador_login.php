@@ -16,6 +16,7 @@ if (!empty($_POST["btn_login"])) {
 
         if($datos=$sql->fetch_object()){
             session_start();
+            $_SESSION['id_usuario']=$datos->id_usuario;
             echo "<p>Autorizo</p>";
         }else{
             echo "<p>No autorizo</p>";

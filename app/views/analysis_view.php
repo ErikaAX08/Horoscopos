@@ -4,8 +4,23 @@ global $baseURL;
 $additional_styles = "pages/analysis.css";
 include __DIR__ . '/../templates/header.php';
 
-$nick = "Ivan T";
+include("app/config/conexion_bd.php");
+$link=Conectarse();
 
+session_start();
+$id_usuario = $_SESSION['id_usuario'] ?? 1;
+
+$sql = mysqli_query($link, "SELECT nombre, nick FROM usuarios WHERE id_usuario = $id_usuario");
+
+if ($datos = $sql->fetch_object()) {
+    $nombre = $datos->nombre;
+    $nick = $datos->nick;
+}else{
+    echo "<p>No autorizo</p>";
+    exit;
+}
+
+mysqli_close($link);
 ?>
 
 <main class="main">
@@ -21,12 +36,12 @@ $nick = "Ivan T";
                 </div>
             </div>
             <div class="info_text">
-                <p class="text">🔹 Bienvenido, [Nombre]. Los astros alinearon tu energía desde el [Día/Mes/Año de nacimiento], influenciado por [Signo Zodiacal].</p>
+                <p class="text">🔹 Bienvenido, <?php echo $nombre;?>. Los astros alinearon tu energía desde el [Día/Mes/Año de nacimiento], influenciado por [Signo Zodiacal].</p>
                 <p class="text">🔹 Tu Esencia: Tu signo te otorga una personalidad [breve descripción del signo], mientras que tu ascendente [Ascendente] guía tu proyección y la Luna en [Signo Lunar] refleja tu mundo emocional.</p>
                 <p class="text">❤ Compatibilidad & Energía: Tu relación con [Signo de la pareja] vibra con [Energía de la relación], fortalecida desde [Fecha de nacimiento de la pareja].</p>
                 <p class="text">🍃 Salud & Bienestar: Enfrentaste [Enfermedades registradas], pero los astros sugieren [Consejo de bienestar] para equilibrar tu energía.</p>
                 <p class="text">💰 Prosperidad & Trabajo: Tu situación financiera [Situación financiera] y laboral [Situación laboral] se alinean con [Influencias astrológicas], atrayendo oportunidades clave.</p>
-                <p class="text">🌟 Mensaje de los astros: [Nombre/Nick], tu esencia es única. Escucha tu intuición y deja que las estrellas guíen tu destino.</p>
+                <p class="text">🌟 Mensaje de los astros: <?php echo $nick;?>, tu esencia es única. Escucha tu intuición y deja que las estrellas guíen tu destino.</p>
             </div>
         </div>
 
