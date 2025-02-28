@@ -1,10 +1,10 @@
 <?php
 
-include("app/config/conexion_bd.php");
+include("../config/conexion_bd.php");
 $link=Conectarse();
 
 if (!empty($_POST["btn_registro"])) {
-    if(empty($_POST["name"]) and empty($_POST["last_name"]) and empty($_POST["mother_last_name"]) and empty($_POST["nick"]) and empty($_POST["email"]) and empty($_POST["password"]) and empty($_POST["birthdate"]) and empty($_POST["gander"]) and empty($_POST["partner_birthdate"]) and empty($_POST["illnesses"])  and empty($_POST["abundance"]) and empty($_POST["work_energy"])) {
+    if(empty($_POST["name"]) and empty($_POST["last_name"]) and empty($_POST["mother_last_name"]) and empty($_POST["nick"]) and empty($_POST["email"]) and empty($_POST["password"]) and empty($_POST["birthdate"]) and empty($_POST["gender"]) and empty($_POST["partner_birthdate"]) and empty($_POST["illnesses"])  and empty($_POST["abundance"]) and empty($_POST["work_energy"])) {
         echo "vacio";
     } else
     {
@@ -15,22 +15,30 @@ if (!empty($_POST["btn_registro"])) {
         $email = $_POST["email"];
         $password = $_POST["password"];
         $birthdate = $_POST["birthdate"];
-        $gander = $_POST["gander"];
+        $gender = $_POST["gender"];
         $partner_birthdate = $_POST["partner_birthdate"];
         $illnesses = $_POST["illnesses"];
         $abundance = $_POST["abundance"];
         $work_energy = $_POST["work_energy"];
 
+        if($gender == "Hombre")
+        {
+            $gender = 'M';
+        } else if ($gender == 'Mujer')
+        {
+            $gender = 'F';
+        } else
+        {
+            $gender = 'Otro';
+        }
+
         // Realiza el INSERT
         $sql = "INSERT INTO usuarios (nombre, apellido_paterno, apellido_materno, nick, email, contrasena, genero, paleta_colores) 
-        VALUES ('$name', '$last_name', '$mother_last_name', '$nick', '$email', '$password', '$gander')";
+        VALUES ('$name', '$last_name', '$mother_last_name', '$nick', '$email', '$password', '$gender', 'Cake')";
 
         if (mysqli_query($link, $sql)) {
             // Obtiene el último ID insertado
             $id_usuario = mysqli_insert_id($link);
-            echo "El ID del usuario insertado es: " . $id_usuario;
-        } else {
-            echo "Error: " . mysqli_error($link);
         }
 
 // Usamos la función explode para dividir la fecha en un array
@@ -71,5 +79,6 @@ if (!empty($_POST["btn_registro"])) {
 
     }
 }
+
 mysqli_close($link);
 ?>

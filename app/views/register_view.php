@@ -7,7 +7,11 @@ include __DIR__ . '/../templates/header.php';
     <div class="content">
         <h2 class="title">Únete al universo de los astros</h2>
         <p class="description">Crea una cuenta de RIEAV</p>
-        <form class="form" method="POST">
+        <form class="form" method="POST" action ="">
+            <?php
+            include("../config/controlador_registro.php");
+            ?>
+
             <label for="name">Nombre</label>
             <input class="input" id="name" type="text" name="name" placeholder="¿Cómo te llaman los astros?" required>
 
