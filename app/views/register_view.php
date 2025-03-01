@@ -30,8 +30,11 @@ include __DIR__ . '/../templates/header.php';
             <label for="password">Contraseña</label>
             <input class="input" id="password" type="password" name="password" placeholder="Tu llave cósmica" required>
 
-            <label for="birthdate">Fecha de nacimiento</label>
-            <input class="input" id="birthdate" type="date" name="birthdate" placeholder="Hora, día, mes y año de tu conexión astral" required>
+            <label for="birthdate">Hora, día, mes y año de nacimiento</label>
+            <input class="input" id="birthdate" type="text" name="birthdate" placeholder="Hora, día, mes y año de tu conexión astral" required>
+
+            <label for="birthplace">Lugar de nacimiento</label>
+            <input class="input" id="birthplace" type="text" name="birthplace" placeholder="Ej: Puebla, México (afecta tu signo ascendente)" required>
 
             <label for="gender">Género</label>
             <select class="input dropdown" id="gender" name="gender">
@@ -41,8 +44,8 @@ include __DIR__ . '/../templates/header.php';
                 <option value="no_especifico">Deseo no especificar</option>
             </select>
 
-            <label for="partner_birthdate">Fecha de nacimiento de tu pareja (Opcional)</label>
-            <input class="input" id="partner_birthdate" type="date" name="partner_birthdate" placeholder="Hora, día, mes y año del instante en que su destino comenzó">
+            <label for="partner_birthdate">Hora, día, mes y año de nacimiento de tu pareja (Opcional)</label>
+            <input class="input" id="partner_birthdate" type="text" name="partner_birthdate" placeholder="Hora, día, mes y año del instante en que su destino comenzó">
 
             <label for="illnesses">Enfermedades que has tenido en el año</label>
             <input class="input" id="illnesses" type="text" name="illnesses" placeholder="Eventos que han afectado tu energía vital">
