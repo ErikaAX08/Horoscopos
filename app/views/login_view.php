@@ -19,7 +19,7 @@ include __DIR__ . '/../templates/header.php';
             <input class="input" id="password" type="password" name="password" placeholder="Tu llave cósmica" required>
             <input class="main_button" type="submit" name="btn_login">Iniciar Sesión</input>
         </form>
-        <p class="small_text">¿No tienes cuenta? <a href="#">Registrate</a></p>
+        <p class="small_text">¿No tienes cuenta? <a href="app/views/register_view.php">Registrate</a></p>
     </div>
 </main>
 

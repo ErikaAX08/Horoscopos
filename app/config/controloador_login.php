@@ -11,11 +11,12 @@ if (!empty($_POST["btn_login"])) {
         $email=$_POST["email"];
         $password=$_POST["password"];
 
-        $sql=mysqli_query($link,"select * from usuarios where email='$email' and contraseña='$password'");
+        $sql=mysqli_query($link,"select * from usuarios where email='$email' and contrasena='$password'");
 
 
         if($datos=$sql->fetch_object()){
             session_start();
+            $_SESSION['id_usuario']=$datos->id_usuario;
             echo "<p>Autorizo</p>";
         }else{
             echo "<p>No autorizo</p>";
