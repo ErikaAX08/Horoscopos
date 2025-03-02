@@ -1,5 +1,4 @@
 <?php
-
 include("app/config/conexion_bd.php");
 $link=Conectarse();
 
@@ -13,11 +12,11 @@ if (!empty($_POST["btn_login"])) {
 
         $sql=mysqli_query($link,"select * from usuarios where email='$email' and contrasena='$password'");
 
-
         if($datos=$sql->fetch_object()){
             session_start();
             $_SESSION['id_usuario']=$datos->id_usuario;
-            echo "<p>Autorizo</p>";
+            header("Location: app/views/analysis_view.php");
+            exit; // Asegura que el script se detenga después de la redirección
         }else{
             echo "<p>No autorizo</p>";
         }
