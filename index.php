@@ -14,6 +14,9 @@ switch ($route) {
     case 'analysis':
         require_once __DIR__ . "/app/views/analysis_view.php";
         break;
+    case 'home':
+        require_once __DIR__ . "/app/views/home_view.php";
+        break;
     default:
         require_once __DIR__ . "/app/views/home_view.php";
         break;

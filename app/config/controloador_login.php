@@ -1,5 +1,8 @@
 <?php
-include("app/config/conexion_bd.php");
+include("conexion_bd.php");
+
+global $baseURL;
+
 $link=Conectarse();
 
 if (!empty($_POST["btn_login"])) {
@@ -15,7 +18,7 @@ if (!empty($_POST["btn_login"])) {
         if($datos=$sql->fetch_object()){
             session_start();
             $_SESSION['id_usuario']=$datos->id_usuario;
-            header("Location: app/views/analysis_view.php");
+            header("Location: $baseURL/analysis");
             exit; // Asegura que el script se detenga después de la redirección
         }else{
             echo "<p>No autorizo</p>";

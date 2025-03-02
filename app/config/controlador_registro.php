@@ -1,6 +1,6 @@
 <?php
 
-include("../config/conexion_bd.php");
+include("conexion_bd.php");
 $link=Conectarse();
 
 if (!empty($_POST["btn_registro"])) {
@@ -33,8 +33,8 @@ if (!empty($_POST["btn_registro"])) {
         }
 
         // Realiza el INSERT
-        $sql = "INSERT INTO usuarios (nombre, apellido_paterno, apellido_materno, nick, email, contrasena, genero, paleta_colores) 
-        VALUES ('$name', '$last_name', '$mother_last_name', '$nick', '$email', '$password', '$gender', 'Cake')";
+        $sql = "INSERT INTO usuarios (nombre, apellido_paterno, apellido_materno, nick, email, contrasena, genero) 
+        VALUES ('$name', '$last_name', '$mother_last_name', '$nick', '$email', '$password', '$gender')";
 
         if (mysqli_query($link, $sql)) {
             // Obtiene el último ID insertado

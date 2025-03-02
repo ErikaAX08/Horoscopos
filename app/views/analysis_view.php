@@ -34,7 +34,7 @@ include __DIR__ . '/../templates/header.php';
         </div>
 
         <div class="buttons_container">
-            <a class="button button_light" href="#">Volver a la Página Principal</a>
+            <a class="button button_light" href="app/config/logout.php">Volver a la Página Principal</a>
             <span>o</span>
             <a class="button button_accent" href="#">Actualizar Datos Astrales</a>
         </div>

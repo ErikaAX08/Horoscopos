@@ -1,6 +1,9 @@
 <?php
 $additional_styles = "pages/auth.css";
 include __DIR__ . '/../templates/header.php';
+include __DIR__ . '/../config/controlador_registro.php';
+
+global $baseURL;
 ?>
 
 <main class="main">
@@ -8,10 +11,6 @@ include __DIR__ . '/../templates/header.php';
         <h2 class="title">Únete al universo de los astros</h2>
         <p class="description">Crea una cuenta de RIEAV</p>
         <form class="form" method="POST" action ="">
-            <?php
-            include("../config/controlador_registro.php");
-            ?>
-
             <label for="name">Nombre</label>
             <input class="input" id="name" type="text" name="name" placeholder="¿Cómo te llaman los astros?" required>
 
@@ -31,10 +30,7 @@ include __DIR__ . '/../templates/header.php';
             <input class="input" id="password" type="password" name="password" placeholder="Tu llave cósmica" required>
 
             <label for="birthdate">Hora, día, mes y año de nacimiento</label>
-            <input class="input" id="birthdate" type="text" name="birthdate" placeholder="Hora, día, mes y año de tu conexión astral" required>
-
-            <label for="birthplace">Lugar de nacimiento</label>
-            <input class="input" id="birthplace" type="text" name="birthplace" placeholder="Ej: Puebla, México (afecta tu signo ascendente)" required>
+            <input class="input" id="birthdate" type="text" name="birthdate" placeholder="Día, mes y año de tu conexión astral" required>
 
             <label for="gender">Género</label>
             <select class="input dropdown" id="gender" name="gender">
@@ -44,8 +40,8 @@ include __DIR__ . '/../templates/header.php';
                 <option value="no_especifico">Deseo no especificar</option>
             </select>
 
-            <label for="partner_birthdate">Hora, día, mes y año de nacimiento de tu pareja (Opcional)</label>
-            <input class="input" id="partner_birthdate" type="text" name="partner_birthdate" placeholder="Hora, día, mes y año del instante en que su destino comenzó">
+            <label for="partner_birthdate">Día, mes y año de nacimiento de tu pareja (Opcional)</label>
+            <input class="input" id="partner_birthdate" type="text" name="partner_birthdate" placeholder="Día, mes y año del instante en que su destino comenzó">
 
             <label for="illnesses">Enfermedades que has tenido en el año</label>
             <input class="input" id="illnesses" type="text" name="illnesses" placeholder="Eventos que han afectado tu energía vital">
@@ -72,7 +68,7 @@ include __DIR__ . '/../templates/header.php';
 
             <input name="btn_registro" class="main_button" type="submit">Crear Cuenta</input>
         </form>
-        <p class="small_text">¿Ya tienes cuenta? <a href="#">Inicia sesión</a></p>
+        <p class="small_text">¿Ya tienes cuenta? <a href="<?php echo $baseURL?>/login">Inicia sesión</a></p>
     </div>
 </main>
 

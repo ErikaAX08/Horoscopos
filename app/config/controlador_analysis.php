@@ -1,5 +1,5 @@
 <?php
-include("../config/conexion_bd.php");
+include("conexion_bd.php");
 
 function obtenerSignoZodiacal($dia_nacimiento, $mes_nacimiento) {
     if (($mes_nacimiento == 3 && $dia_nacimiento >= 21) || ($mes_nacimiento == 4 && $dia_nacimiento <= 19)) {
@@ -159,7 +159,6 @@ if ($datos = $resultado->fetch_object()) {
 }
 
 mysqli_stmt_close($stmt);
-
 mysqli_close($link);
 
 ?>
