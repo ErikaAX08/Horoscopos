@@ -1,7 +1,7 @@
 <?php
 $additional_styles = "pages/auth.css";
 include __DIR__ . '/../templates/header.php';
-include __DIR__ . '../config/controlador_registro.php';
+include __DIR__ . '/../config/controlador_registro.php';
 
 global $baseURL;
 ?>

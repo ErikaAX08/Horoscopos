@@ -1,3 +1,3 @@
 <?php
 
-$baseURL = "http://localhost/HoroscoposV2";
+$baseURL = "http://localhost/Horoscopos";

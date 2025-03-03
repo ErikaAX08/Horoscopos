@@ -11,17 +11,20 @@ if (!empty($_POST["btn_login"])) {
     } else
     {
         $email=$_POST["email"];
-        $password=$_POST["password"];
+        $password= $_POST["password"];
 
-        $sql=mysqli_query($link,"select * from usuarios where email='$email' and contrasena='$password'");
-
-        if($datos=$sql->fetch_object()){
-            session_start();
-            $_SESSION['id_usuario']=$datos->id_usuario;
-            header("Location: $baseURL/analysis");
-            exit; // Asegura que el script se detenga después de la redirección
-        }else{
-            echo "<p>No autorizo</p>";
+        $sql = mysqli_query($link, "SELECT id_usuario, contrasena FROM usuarios WHERE email='$email'");
+        if ($datos = $sql->fetch_object()) {
+            if (password_verify($password, $datos->contrasena)) {
+                session_start();
+                $_SESSION['id_usuario'] = $datos->id_usuario;
+                header("Location: $baseURL/analysis");
+                exit; // Asegura que el script se detenga después de la redirección
+            } else {
+                echo "<p>Contraseña incorrecta</p>";
+            }
+        } else {
+            echo "<p>Usuario no encontrado</p>";
         }
     }
 }

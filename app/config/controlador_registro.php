@@ -13,7 +13,7 @@ if (!empty($_POST["btn_registro"])) {
         $mother_last_name = $_POST["mother_last_name"];
         $nick = $_POST["nick"];
         $email = $_POST["email"];
-        $password = $_POST["password"];
+        $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
         $birthdate = $_POST["birthdate"];
         $gender = $_POST["gender"];
         $partner_birthdate = $_POST["partner_birthdate"];

@@ -12,7 +12,7 @@ global $baseURL;
         <p class="description">Inicia sesión con tu cuenta de RIEAV</p>
         <form class="form" method="POST" action="">
             <?php
-            include __DIR__ . "../config/controloador_login.php";
+            include __DIR__ . "/../config/controloador_login.php";
             ?>
             <label for="email">Email</label>
             <input class="input" id="email" type="email" name="email" placeholder="Ingresa tu correo estelar" required>

@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '../config/controlador_analysis.php';
+include __DIR__ . '/../config/controlador_analysis.php';
 
 global $baseURL;
 
