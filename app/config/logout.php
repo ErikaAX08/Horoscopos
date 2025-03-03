@@ -1,5 +1,7 @@
 <?php
+include __DIR__."/config.php";
 global $baseURL;
+
 
 session_start();
 

@@ -1,7 +1,7 @@
 <?php
 $additional_styles = "pages/auth.css";
 include __DIR__ . '/../templates/header.php';
-include __DIR__ . '/../config/controlador_registro.php';
+include __DIR__ . '../config/controlador_registro.php';
 
 global $baseURL;
 ?>
@@ -66,7 +66,7 @@ global $baseURL;
                 </div>
             </div>
 
-            <input name="btn_registro" class="main_button" type="submit">Crear Cuenta</input>
+            <input name="btn_registro" class="main_button" type="submit" value="Crear Cuenta"/>
         </form>
         <p class="small_text">¿Ya tienes cuenta? <a href="<?php echo $baseURL?>/login">Inicia sesión</a></p>
     </div>

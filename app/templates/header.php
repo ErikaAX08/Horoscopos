@@ -1,7 +1,7 @@
 <?php
 
-$baseURL = "http://localhost/Horoscopos";
-
+include  __DIR__ . "/../config/config.php";
+global $baseURL;
 // get current route
 $currentRoute = basename($_SERVER['REQUEST_URI']);
 
